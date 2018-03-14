@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from .models import Comment
+from django.http import HttpResponse
 
-def index(request):
-    commentObj = Comment.objects
-    return render(request, 'guestbook/index.html', commentObj)
+def guestbookView(request):
+    return HttpResponse('Guestbook View!!!')
 
-def sign(request):
+def guestbookIndex(request):
+    return render(request, 'guestbook/index.html')
+
+def guestbookSign(request):
     return render(request, 'guestbook/sign.html')
